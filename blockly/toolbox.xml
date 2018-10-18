@@ -1,0 +1,58 @@
+<category id="catLine">
+  <block type="line_ifttt">
+    <value name="line_ifttt_event">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="line_ifttt_key">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="line_ifttt_value1">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="line_ifttt_value2">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="line_ifttt_value3">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="line_notify">
+    <value name="line_notify_token">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="line_notify_msg">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+  <block type="line_bot">
+    <value name="line_bot_token">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="line_bot_uid">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="line_bot_msg">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+  </block>
+</category>
