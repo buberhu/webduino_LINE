@@ -27,12 +27,24 @@
     </value>
   </block>
   <block type="line_notify">
+    <field name="line_notify_stickerPackageId"></field>
+    <field name="line_notify_stickerId"></field>
     <value name="line_notify_token">
       <block type="text">
         <field name="TEXT"></field>
       </block>
     </value>
     <value name="line_notify_msg">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="line_notify_imagethumbnail">
+      <block type="text">
+        <field name="TEXT"></field>
+      </block>
+    </value>
+    <value name="line_notify_imagefullsize">
       <block type="text">
         <field name="TEXT"></field>
       </block>
