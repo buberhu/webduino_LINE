@@ -35,7 +35,7 @@ Blockly.Blocks['line_notify'] = {
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField("LINE ( Notify )")
-      .appendField(Blockly.Msg.LINE_TOKEN);
+      .appendField(Blockly.Msg.LINE_TOKEN );
     this.appendValueInput("line_notify_msg")
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
