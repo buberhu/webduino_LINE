@@ -26,10 +26,9 @@ Blockly.JavaScript['line_notify'] = function(block) {
   var msg = Blockly.JavaScript.valueToCode(block, 'line_notify_msg', Blockly.JavaScript.ORDER_ATOMIC);
   var stickerpackageid = Blockly.JavaScript.valueToCode(block, 'line_notify_stickerPackageId', Blockly.JavaScript.ORDER_ATOMIC);
   var stickerid = Blockly.JavaScript.valueToCode(block, 'line_notify_stickerId', Blockly.JavaScript.ORDER_ATOMIC);
-  var imagethumbnail = Blockly.JavaScript.valueToCode(block, 'line_notify_imagethumbnail', Blockly.JavaScript.ORDER_ATOMIC);
   var imagefullsize = Blockly.JavaScript.valueToCode(block, 'line_notify_imagefullsize', Blockly.JavaScript.ORDER_ATOMIC);
   
-  var code = 'line_notify(' + token + ',' + msg + ',' + stickerpackageid + ',' + stickerid + ',' + imagethumbnail + ',' + imagefullsize + ');';
+  var code = 'line_notify(' + token + ',' + msg + ',' + stickerpackageid + ',' + stickerid + ',' + imagefullsize + ');';
   return code;
 };
 
