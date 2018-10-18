@@ -40,20 +40,23 @@ Blockly.Blocks['line_notify'] = {
       .setCheck("String")
       .setAlign(Blockly.ALIGN_RIGHT)
       .appendField(Blockly.Msg.LINE_MSG);
-	this.appendDummyInput()
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.LINE_STK)
-        .appendField(new Blockly.FieldTextInput(""), "line_notify_stickerPackageId")
-        .appendField("，STKID :")
-        .appendField(new Blockly.FieldTextInput(""), "line_notify_stickerId");
+	  
+	this.appendValueInput("line_notify_stickerPackageId")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINE_STKPKG);
+	this.appendValueInput("line_notify_stickerId")
+      .setCheck("String")
+      .setAlign(Blockly.ALIGN_RIGHT)
+      .appendField(Blockly.Msg.LINE_STK);
 	this.appendValueInput("line_notify_imagethumbnail")
-        .setCheck("String")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.LINE_IMGTHUM);
+	.setCheck("String")
+	.setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(Blockly.Msg.LINE_IMGTHUM);
 	this.appendValueInput("line_notify_imagefullsize")
-        .setCheck("String")
-        .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.LINE_IMGFULL);
+	.setCheck("String")
+	.setAlign(Blockly.ALIGN_RIGHT)
+	.appendField(Blockly.Msg.LINE_IMGFULL);
 	this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
