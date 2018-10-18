@@ -19,21 +19,21 @@
     });
   }
 
-  function line_notify(token, msg, stickerpackageid, stickerid, imagethumbnail, imagefullsize) {
+  function line_notify(token, msg, stickerpackageid, stickerid, imagefullsize) {
     var data = {
       token: token
     };
 	if (msg.length == 0) {
-		msg = "''";
+		msg = " ";
 	}
 	data.message = msg;
 	if(stickerpackageid.length != 0 && stickerid.length != 0) {
 		data.stickerPackageId = stickerpackageid;
-        data.stickerId = stickerid;
+        	data.stickerId = stickerid;
 	}
-	if(imagethumbnail.length != 0 && imagefullsize.length != 0) {
-		data.imageThumbnail = imagethumbnail;
-        data.imageFullsize = imagefullsize;
+	if(imagefullsize.length != 0) {
+		data.imageThumbnail = imagefullsize;
+        	data.imageFullsize = imagefullsize;
 	}
 
     $.post('https://script.google.com/macros/s/AKfycbx8CHul0yv0cPv-5DJLDz9hY1kZqQjm_7iLckjwKGEsjmtOuOc/exec',
