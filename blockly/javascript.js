@@ -51,7 +51,7 @@ Blockly.JavaScript['linebot_on'] = function(block) {
   var statements_on_ = Blockly.JavaScript.statementToCode(block, 'on_');
 
   var code = "firebase1ca6d.database().ref("+variable_name_+".userId).on('value',function(s){\n"+
-      		"if(flag1ca6d) flag1ca6d=false; else ret1ca6d=s.val().message;\n"+
+      		"  if(flag1ca6d) flag1ca6d=false; else ret1ca6d=s.val().message;\n"+
       		statements_on_+
       		"});\n";
   return code;
