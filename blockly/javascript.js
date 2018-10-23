@@ -52,9 +52,10 @@ Blockly.JavaScript['linebot_on'] = function(block) {
   var code = "firebase1ca6d.on('value',function(s){\n"+
       		"  if(flag1ca6d) flag1ca6d=false;\n"+
       		"  else {\n"+
-      		"    s.forEach(function(data){\n"+
-      		"      if(data.val().userid==="+variable_name_+".userId)\n"+
-      		"        "+variable_name_+".onVal = data.val().message;});}\n"+
+      		"    s.forEach(function(e){\n"+
+      		"      if(e.val().userid==="+variable_name_+".userId)\n"+
+      		"        "+variable_name_+".onVal = e.val().message;});\n"+
+      		"  }\n"+
       		statements_on_+
       		"});\n";
   return code;
