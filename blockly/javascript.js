@@ -38,17 +38,20 @@ Blockly.JavaScript['linebot_set'] = function(block) {
   var value_linebot_token = Blockly.JavaScript.valueToCode(block, 'linebot_token', Blockly.JavaScript.ORDER_ATOMIC);
   var value_linebot_userid = Blockly.JavaScript.valueToCode(block, 'linebot_userid', Blockly.JavaScript.ORDER_ATOMIC);
 
-  var code = "var firebase;\n"+
+  var code = "var firebase1ca6d;\n"+
+      		"var flag1ca6d=true;\n"+
+      		"var ret1ca6d;\n"+
       		variable_name_+" = {token:" + value_linebot_token + ",userId:" + value_linebot_userid + "};\n"+
-			"firebase.initializeApp({databaseURL:'https://webduino-linebot-1ca6d.firebaseio.com/'});\n";
+			"firebase1ca6d.initializeApp({databaseURL:'https://webduino-linebot-1ca6d.firebaseio.com/'});\n";
   return code;
 };
 
 Blockly.JavaScript['linebot_on'] = function(block) {
   var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
   var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
-  // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+
+  var code = "firebase1ca6d.database().ref("+variable_name_+".userId).on('value',function(s){\n"+
+      		"if(flag1ca6d) flag1ca6d=false; else ret1ca6d=s.val().message; });";
   return code;
 };
 
