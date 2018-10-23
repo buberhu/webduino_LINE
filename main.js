@@ -43,36 +43,10 @@
       });
   }
 
-  function line_bot(token, uid, msg) {
-    var data = {
-      token: token,
-      uid: uid
-    };
-    if (typeof msg != 'object') {
-      data.type = 'text';
-      data.text = msg;
-    } else {
-      if (msg.type == 'sticker') {
-        data.type = 'sticker';
-        data.text = '';
-        data.packageId = msg.stickerPackageId;
-        data.stickerId = msg.stickerId;
-      } else if (msg.type == 'image') {
-        data.type = 'image';
-        data.text = '';
-        data.previewImageUrl = msg.imageUri;
-        data.originalContentUrl = msg.imageUri;
-      }
-    }
-    $.post('https://script.google.com/macros/s/AKfycbwM1sSrweL1tv-UsyDnG-rUjMgXSzDLA1p5HAH64lXPOP8pcVE/exec',
-      data,
-      function (e) {
-        console.log(e);
-      });
-  }
+
 
   window.line_ifttt = line_ifttt;
   window.line_notify = line_notify;
-  window.line_bot = line_bot;
+
 
 }(window, window.document));
