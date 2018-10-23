@@ -20,7 +20,6 @@ Blockly.JavaScript['line_ifttt'] = function(block) {
   return code;
 };
 
-
 Blockly.JavaScript['line_notify'] = function(block) {
   var token = Blockly.JavaScript.valueToCode(block, 'line_notify_token', Blockly.JavaScript.ORDER_ATOMIC);
   var msg = Blockly.JavaScript.valueToCode(block, 'line_notify_msg', Blockly.JavaScript.ORDER_ATOMIC);
@@ -32,18 +31,75 @@ Blockly.JavaScript['line_notify'] = function(block) {
   return code;
 };
 
+// ------------------------
 
-Blockly.JavaScript['line_bot'] = function(block) {
-  var token = Blockly.JavaScript.valueToCode(block, 'line_bot_token', Blockly.JavaScript.ORDER_ATOMIC);
-  var uid = Blockly.JavaScript.valueToCode(block, 'line_bot_uid', Blockly.JavaScript.ORDER_ATOMIC);
-  var msg = Blockly.JavaScript.valueToCode(block, 'line_bot_msg', Blockly.JavaScript.ORDER_ATOMIC);
+Blockly.JavaScript['linebot_set'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  var value_linebot_token = Blockly.JavaScript.valueToCode(block, 'linebot_token', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_linebot_userid = Blockly.JavaScript.valueToCode(block, 'linebot_userid', Blockly.JavaScript.ORDER_ATOMIC);
 
-  if (msg.length == 0) {
-    msg = "''";
-  }
-  var code = 'line_bot(' + token + ',' + uid + ',' + msg + ');';
-
+  var code = variable_name_ + " = {token:'" + value_linebot_token + "',userId:'" + value_linebot_userid + "'};\n"+
+			"var firebase;\n"+
+			"firebase.initializeApp({databaseURL:'https://webduino-linebot-1ca6d.firebaseio.com/'});\n";
   return code;
 };
 
+Blockly.JavaScript['linebot_on'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  var statements_name = Blockly.JavaScript.statementToCode(block, 'NAME');
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
 
+Blockly.JavaScript['linebot_message'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...';
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['linebot_sendmsg'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  var value_bot_sendmsg = Blockly.JavaScript.valueToCode(block, 'bot_sendmsg', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['linebot_sendstk'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  var value_bot_sendstkpkg = Blockly.JavaScript.valueToCode(block, 'bot_sendstkpkg', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_bot_sendstkid = Blockly.JavaScript.valueToCode(block, 'bot_sendstkid', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['linebot_sendimg'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  var value_bot_sendimg_s = Blockly.JavaScript.valueToCode(block, 'bot_sendimg_s', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_bot_sendimg = Blockly.JavaScript.valueToCode(block, 'bot_sendimg', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['linebot_sendvideo'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  var value_bot_sendvideo_s = Blockly.JavaScript.valueToCode(block, 'bot_sendvideo_s', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_bot_sendvideo = Blockly.JavaScript.valueToCode(block, 'bot_sendvideo', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
+
+Blockly.JavaScript['linebot_sendaudio'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  var value_bot_sendaudio_s = Blockly.JavaScript.valueToCode(block, 'bot_sendaudio_s', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_bot_sendaudio = Blockly.JavaScript.valueToCode(block, 'bot_sendaudio', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = '...;\n';
+  return code;
+};
