@@ -38,8 +38,8 @@ Blockly.JavaScript['linebot_set'] = function(block) {
   var value_linebot_token = Blockly.JavaScript.valueToCode(block, 'linebot_token', Blockly.JavaScript.ORDER_ATOMIC);
   var value_linebot_userid = Blockly.JavaScript.valueToCode(block, 'linebot_userid', Blockly.JavaScript.ORDER_ATOMIC);
 
-  var code = variable_name_ + " = {token:'" + value_linebot_token + "',userId:'" + value_linebot_userid + "'};\n"+
-			"var firebase;\n"+
+  var code = "var firebase;\n"+
+      		variable_name_+" = {token:" + value_linebot_token + ",userId:" + value_linebot_userid + "};\n"+
 			"firebase.initializeApp({databaseURL:'https://webduino-linebot-1ca6d.firebaseio.com/'});\n";
   return code;
 };
