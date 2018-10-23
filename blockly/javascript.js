@@ -48,12 +48,12 @@ Blockly.JavaScript['linebot_set'] = function(block) {
 
 Blockly.JavaScript['linebot_on'] = function(block) {
   var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
-  var value_code_ = Blockly.JavaScript.valueToCode(block, 'code_', Blockly.JavaScript.ORDER_ATOMIC);
+  var statements_on_ = Blockly.JavaScript.statementToCode(block, 'on_');
 
   var code = "firebase1ca6d.database().ref("+variable_name_+".userId).on('value',function(s){\n"+
       		"if(flag1ca6d) flag1ca6d=false; else ret1ca6d=s.val().message;\n"+
-      		value_code_+"\n";
-      		"});";
+      		statements_on_+
+      		"});\n";
   return code;
 };
 
