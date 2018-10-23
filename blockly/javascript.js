@@ -41,7 +41,7 @@ Blockly.JavaScript['linebot_set'] = function(block) {
   var code = "var firebase1ca6d;\n"+
       		"var flag1ca6d=true;\n"+
       		variable_name_+" = {token:" + value_linebot_token + ",userId:" + value_linebot_userid + "};\n"+
-			"firebase1ca6d.initializeApp({databaseURL:'https://webduino-linebot-1ca6d.firebaseio.com/'});\n";
+		"firebase1ca6d = new Firebase('https://webduino-linebot-1ca6d.firebaseio.com/');\n";
   return code;
 };
 
@@ -49,8 +49,12 @@ Blockly.JavaScript['linebot_on'] = function(block) {
   var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
   var statements_on_ = Blockly.JavaScript.statementToCode(block, 'on_');
 
-  var code = "firebase1ca6d.database().ref("+variable_name_+".userId).on('value',function(s){\n"+
-      		"  if(flag1ca6d) flag1ca6d=false; else "+variable_name_+".onVal = s.val().message;\n"+
+  var code = "firebase1ca6d.on('value',function(s){\n"+
+      		"  if(flag1ca6d) flag1ca6d=false;\n"+
+      		"  else {\n"+
+      		"    snapshot.forEach(function(data){\n"+
+      		"      if(data.val().userid==='"+variable_name_+".userId')\n"+
+      		"        "+variable_name_+".onVal = data.val().message;});}\n"+
       		statements_on_+
       		"});\n";
   return code;
