@@ -25,7 +25,7 @@ Blockly.Blocks['line_ifttt'] = {
     this.setNextStatement(true, null);
     this.setColour(120);
     this.setTooltip("");
-    this.setHelpUrl("http://www.oxxostudio.tw/articles/201803/ifttt-line.html");
+    this.setHelpUrl("");
   }
 };
 
@@ -60,29 +60,162 @@ Blockly.Blocks['line_notify'] = {
     this.setHelpUrl("");
   }
 };
-
-Blockly.Blocks['line_bot'] = {
-  init: function () {
-    this.appendValueInput("line_bot_token")
-      .setCheck(null)
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("LINE ( Bot )")
-      .appendField("Token :");
-    this.appendValueInput("line_bot_uid")
-      .setCheck(null)
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("Uid :");
-    this.appendValueInput("line_bot_msg")
-      .setCheck(null)
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.LINE_MSG);
+// ---------------------------
+Blockly.Blocks['linebot_set'] = {
+  init: function() {
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Set LINE Bot")
+        .appendField(new Blockly.FieldVariable("linebot"), "name_");
+    this.appendValueInput("linebot_token")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("token :");
+    this.appendValueInput("linebot_userid")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("user ID :");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
-    this.setTooltip("");
-    this.setHelpUrl("http://www.oxxostudio.tw/articles/201804/line-bot-apps-script.html");
+    this.setColour(195);
+ this.setTooltip("");
+ this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['linebot_on'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldVariable("linebot"), "name_")
+        .appendField("Start Receiving Message");
+    this.appendStatementInput("NAME")
+        .setCheck(null)
+        .appendField("Do");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['linebot_message'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldVariable("linebot"), "name_")
+        .appendField("Received Message");
+    this.setOutput(true, null);
+    this.setColour(30);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['linebot_sendmsg'] = {
+  init: function() {
+    this.appendValueInput("bot_sendmsg")
+        .setCheck("String")
+        .appendField("Set")
+        .appendField(new Blockly.FieldVariable("linebot"), "name_")
+        .appendField("Send Message :");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['linebot_sendstk'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set")
+        .appendField(new Blockly.FieldVariable("linebot"), "name_")
+        .appendField("Send Sticker，");
+    this.appendValueInput("bot_sendstkpkg")
+        .setCheck("Number")
+        .appendField("STKPKGID :");
+    this.appendValueInput("bot_sendstkid")
+        .setCheck("Number")
+        .appendField("STKID :");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['linebot_sendimg'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set")
+        .appendField(new Blockly.FieldVariable("linebot"), "name_")
+        .appendField("Send Image");
+    this.appendValueInput("bot_sendimg_s")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Preview URL :");
+    this.appendValueInput("bot_sendimg")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Original URL :");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['linebot_sendvideo'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set")
+        .appendField(new Blockly.FieldVariable("linebot"), "name_")
+        .appendField("Send Video");
+    this.appendValueInput("bot_sendvideo_s")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Image URL :");
+    this.appendValueInput("bot_sendvideo")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Video URL :");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['linebot_sendaudio'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Set")
+        .appendField(new Blockly.FieldVariable("linebot"), "name_")
+        .appendField("Send Audio");
+    this.appendValueInput("bot_sendaudio_s")
+        .setCheck("Number")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("duration :");
+    this.appendValueInput("bot_sendaudio")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Audio URL :");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
+
+
 
 
 
