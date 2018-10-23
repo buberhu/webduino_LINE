@@ -88,7 +88,7 @@ Blockly.Blocks['linebot_on'] = {
     this.appendDummyInput()
         .appendField(new Blockly.FieldVariable("linebot"), "name_")
         .appendField("Start Receiving Message");
-    this.appendStatementInput("NAME")
+    this.appendStatementInput("on_")
         .setCheck(null)
         .appendField("Do");
     this.setPreviousStatement(true, null);
