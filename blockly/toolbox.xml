@@ -53,23 +53,7 @@
       </block>
     </value>
   </block>
-  <block type="line_bot">
-    <value name="line_bot_token">
-      <block type="text">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="line_bot_uid">
-      <block type="text">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-    <value name="line_bot_msg">
-      <block type="text">
-        <field name="TEXT"></field>
-      </block>
-    </value>
-  </block>
+  
   
   <block type="linebot_set">
       <field name="name_" id="tP:X`v/Y{ETTlD#q?Ce*" variabletype="">linebot</field>
