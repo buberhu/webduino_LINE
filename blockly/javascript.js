@@ -41,7 +41,7 @@ Blockly.JavaScript['linenotify_sendstk'] = function(block) {
   var value_notify_sendstkpkg = Blockly.JavaScript.valueToCode(block, 'notify_sendstkpkg', Blockly.JavaScript.ORDER_ATOMIC);
   var value_notify_sendstkid = Blockly.JavaScript.valueToCode(block, 'notify_sendstkid', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = "line_notify($.extend({},"+variable_name_+",{stickerPackageId:"+value_notify_sendstkpkg+",stickerId:"+value_notify_sendstkid+"}));\n";
+  var code = "line_notify($.extend({},"+variable_name_+",{message:'',stickerPackageId:"+value_notify_sendstkpkg+",stickerId:"+value_notify_sendstkid+"}));\n";
   return code;
 };
 
@@ -50,7 +50,7 @@ Blockly.JavaScript['linenotify_sendimg'] = function(block) {
   var value_notify_sendimg_s = Blockly.JavaScript.valueToCode(block, 'notify_sendimg_s', Blockly.JavaScript.ORDER_ATOMIC);
   var value_notify_sendimg = Blockly.JavaScript.valueToCode(block, 'notify_sendimg', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = "line_notify($.extend({},"+variable_name_+",{imageThumbnail:"+value_notify_sendimg_s+",imageFullsize:"+value_notify_sendimg+"}));\n";
+  var code = "line_notify($.extend({},"+variable_name_+",{message:'',imageThumbnail:"+value_notify_sendimg_s+",imageFullsize:"+value_notify_sendimg+"}));\n";
   return code;
 };
 
