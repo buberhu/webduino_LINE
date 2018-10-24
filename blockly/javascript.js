@@ -73,7 +73,8 @@ Blockly.JavaScript['linebot_sendmsg'] = function(block) {
   var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
   var value_bot_sendmsg = Blockly.JavaScript.valueToCode(block, 'bot_sendmsg', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = '...;\n';
+  var code = variable_name_+".message = "+value_bot_sendmsg+"\n"+
+      		"line_bot("+variable_name_+")";
   return code;
 };
 
