@@ -44,8 +44,11 @@
   }
 
   function line_bot(data) {
-	  
-	  
+    $.post('https://script.google.com/macros/s/AKfycbz3WttppuI_dlw0vr7o6R_sJzY06kqBOjorHR1AI32sHj7gjkgP/exec',
+      data,
+      function(e){
+	console.log(e);
+      });
   }
 
   window.line_ifttt = line_ifttt;
