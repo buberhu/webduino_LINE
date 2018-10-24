@@ -1,7 +1,7 @@
 Blockly.Msg.LINE_TOKEN = 'Token :';
-Blockly.Msg.LINE_MSG = '讯息 :';
-Blockly.Msg.LINE_STKPKG = '表情贴图 STKPKGID :';
-Blockly.Msg.LINE_STK = '表情贴图 STKID :';
+Blockly.Msg.LINE_MSG = '信息 :';
+Blockly.Msg.LINE_STKPKG = '图释 STKPKGID :';
+Blockly.Msg.LINE_STK = '图释 STKID :';
 Blockly.Msg.LINE_IMGFULL = '图片网址 :';
 Blockly.Msg.LINEBot_Setbot = '设定 LINE Bot';
 Blockly.Msg.LINEBot_Token = 'token :';
