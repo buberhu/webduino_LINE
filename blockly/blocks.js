@@ -28,36 +28,80 @@ Blockly.Blocks['line_ifttt'] = {
     this.setHelpUrl("");
   }
 };
-
-Blockly.Blocks['line_notify'] = {
-  init: function () {
-    this.appendValueInput("line_notify_token")
-      .setCheck("String")
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField("LINE ( Notify )")
-      .appendField(Blockly.Msg.LINE_TOKEN);
-    this.appendValueInput("line_notify_msg")
-      .setCheck("String")
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.LINE_MSG);
-    this.appendValueInput("line_notify_stickerPackageId")
-      .setCheck("String")
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.LINE_STKPKG);
-    this.appendValueInput("line_notify_stickerId")
-      .setCheck("String")
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.LINE_STK);
-    this.appendValueInput("line_notify_imagefullsize")
-      .setCheck("String")
-      .setAlign(Blockly.ALIGN_RIGHT)
-      .appendField(Blockly.Msg.LINE_IMGFULL);
-    this.setInputsInline(false);
+// ---------------------------
+Blockly.Blocks['linenotify_set'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.LINENotify_Set)
+        .appendField(new Blockly.FieldVariable("linenotify"), "name_");
+    this.appendValueInput("linenotify_token")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.LINENotify_Token);
+    this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(120);
-    this.setTooltip("");
-    this.setHelpUrl("");
+    this.setColour(195);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['linenotify_sendmsg'] = {
+  init: function() {
+    this.appendValueInput("notify_sendmsg")
+        .setCheck("String")
+        .appendField(Blockly.Msg.LINENotify_Set)
+        .appendField(new Blockly.FieldVariable("linenotify"), "name_")
+        .appendField(Blockly.Msg.LINEBot_Sendmsg);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['linenotify_sendstk'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.LINENotify_Set)
+        .appendField(new Blockly.FieldVariable("linenotify"), "name_")
+        .appendField(Blockly.Msg.LINEBot_Sendstk);
+    this.appendValueInput("notify_sendstkpkg")
+        .setCheck("Number")
+        .appendField("STKPKGID :");
+    this.appendValueInput("notify_sendstkid")
+        .setCheck("Number")
+        .appendField("STKID :");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['linenotify_sendimg'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField(Blockly.Msg.LINENotify_Set)
+        .appendField(new Blockly.FieldVariable("linenotify"), "name_")
+        .appendField(Blockly.Msg.LINEBot_Sendimg);
+    this.appendValueInput("notify_sendimg_s")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.LINEBot_SendimgP);
+    this.appendValueInput("notify_sendimg")
+        .setCheck("String")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(Blockly.Msg.LINEBot_SendimgO);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(60);
+ this.setTooltip("");
+ this.setHelpUrl("");
   }
 };
 // ---------------------------
@@ -65,7 +109,7 @@ Blockly.Blocks['linebot_set'] = {
   init: function() {
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField(Blockly.Msg.LINEBot_Setbot)
+        .appendField(Blockly.Msg.LINEBot_Set)
         .appendField(new Blockly.FieldVariable("linebot"), "name_");
     this.appendValueInput("linebot_token")
         .setCheck("String")

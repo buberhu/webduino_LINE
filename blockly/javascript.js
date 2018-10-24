@@ -19,18 +19,42 @@ Blockly.JavaScript['line_ifttt'] = function(block) {
 
   return code;
 };
-
-Blockly.JavaScript['line_notify'] = function(block) {
-  var token = Blockly.JavaScript.valueToCode(block, 'line_notify_token', Blockly.JavaScript.ORDER_ATOMIC);
-  var msg = Blockly.JavaScript.valueToCode(block, 'line_notify_msg', Blockly.JavaScript.ORDER_ATOMIC);
-  var stickerpackageid = Blockly.JavaScript.valueToCode(block, 'line_notify_stickerPackageId', Blockly.JavaScript.ORDER_ATOMIC);
-  var stickerid = Blockly.JavaScript.valueToCode(block, 'line_notify_stickerId', Blockly.JavaScript.ORDER_ATOMIC);
-  var imagefullsize = Blockly.JavaScript.valueToCode(block, 'line_notify_imagefullsize', Blockly.JavaScript.ORDER_ATOMIC);
-  
-  var code = 'line_notify(' + token + ',' + msg + ',' + stickerpackageid + ',' + stickerid + ',' + imagefullsize + ');';
+// ---------------------------
+Blockly.JavaScript['linenotify_set'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  var value_linenotify_token = Blockly.JavaScript.valueToCode(block, 'linenotify_token', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = variable_name_+" = {token:" + value_linenotify_token + "};\n";
   return code;
 };
 
+Blockly.JavaScript['linenotify_sendmsg'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  var value_notify_sendmsg = Blockly.JavaScript.valueToCode(block, 'notify_sendmsg', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = "line_notify($.extend({},"+variable_name_+",{message:"+value_notify_sendmsg+"}));\n";
+  return code;
+};
+
+Blockly.JavaScript['linenotify_sendstk'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  var value_notify_sendstkpkg = Blockly.JavaScript.valueToCode(block, 'notify_sendstkpkg', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_notify_sendstkid = Blockly.JavaScript.valueToCode(block, 'notify_sendstkid', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = "line_notify($.extend({},"+variable_name_+",{stickerPackageId:"+value_notify_sendstkpkg+",stickerId:"+value_notify_sendstkid+"}));\n";
+  return code;
+};
+
+Blockly.JavaScript['linenotify_sendimg'] = function(block) {
+  var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
+  var value_notify_sendimg_s = Blockly.JavaScript.valueToCode(block, 'notify_sendimg_s', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_notify_sendimg = Blockly.JavaScript.valueToCode(block, 'notify_sendimg', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = "line_bot($.extend({},"+variable_name_+",{imageThumbnail:"+value_notify_sendimg_s+",imageFullsize:"+value_notify_sendimg+"}));\n";
+  return code;
+};
+
+// ---------------------------
 Blockly.JavaScript['linebot_set'] = function(block) {
   var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
   var value_linebot_token = Blockly.JavaScript.valueToCode(block, 'linebot_token', Blockly.JavaScript.ORDER_ATOMIC);
@@ -77,8 +101,6 @@ Blockly.JavaScript['linebot_message'] = function(block) {
 Blockly.JavaScript['linebot_sendmsg'] = function(block) {
   var variable_name_ = Blockly.JavaScript.variableDB_.getName(block.getFieldValue('name_'), Blockly.Variables.NAME_TYPE);
   var value_bot_sendmsg = Blockly.JavaScript.valueToCode(block, 'bot_sendmsg', Blockly.JavaScript.ORDER_ATOMIC);
-  var code = variable_name_+".message = "+value_bot_sendmsg+";\n"+
-      		"line_bot("+variable_name_+");\n";
   var code = "line_bot($.extend({},"+variable_name_+",{message:"+value_bot_sendmsg+"}));\n";
   return code;
 };
