@@ -19,32 +19,8 @@
     });
   }
 
-  // function line_notify(token, msg, stickerpackageid, stickerid, imagefullsize) {
-    // var data = {
-      // token: token
-    // };
-	// if (msg.length == 0) {
-		// msg = " ";
-	// }
-	// data.message = msg;
-	// if(stickerpackageid.length != 0 && stickerid.length != 0) {
-		// data.stickerPackageId = stickerpackageid;
-        	// data.stickerId = stickerid;
-	// }
-	// if(imagefullsize.length != 0) {
-		// data.imageThumbnail = imagefullsize;
-        	// data.imageFullsize = imagefullsize;
-	// }
-
-    // $.post('https://script.google.com/macros/s/AKfycbx8CHul0yv0cPv-5DJLDz9hY1kZqQjm_7iLckjwKGEsjmtOuOc/exec',
-      // data,
-      // function (e) {
-        // console.log(e);
-      // });
-  // }
-
   function line_notify(data) {
-	if(data.message.length === 0) data.message = " ";
+    if(data.message.length === 0) data.message = " ";
     $.post('https://script.google.com/macros/s/AKfycbx8CHul0yv0cPv-5DJLDz9hY1kZqQjm_7iLckjwKGEsjmtOuOc/exec',
       data,
       function(e){
