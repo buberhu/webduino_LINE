@@ -20,7 +20,6 @@
   }
 
   function line_notify(data) {
-    if(data.message.length === 0) data.message = " ";
     $.post('https://script.google.com/macros/s/AKfycbx8CHul0yv0cPv-5DJLDz9hY1kZqQjm_7iLckjwKGEsjmtOuOc/exec',
       data,
       function(e){
