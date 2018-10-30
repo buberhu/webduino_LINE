@@ -25,7 +25,7 @@ Blockly.Blocks['line_ifttt'] = {
     this.setNextStatement(true, null);
     this.setColour(120);
     this.setTooltip("");
-    this.setHelpUrl("");
+    this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineifttt.html");
   }
 };
 // ---------------------------
@@ -43,7 +43,7 @@ Blockly.Blocks['linenotify_set'] = {
     this.setNextStatement(true, null);
     this.setColour(195);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-notify.html");
   }
 };
 
@@ -58,7 +58,7 @@ Blockly.Blocks['linenotify_sendmsg'] = {
     this.setNextStatement(true, null);
     this.setColour(60);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-notify.html");
   }
 };
 
@@ -79,7 +79,7 @@ Blockly.Blocks['linenotify_sendstk'] = {
     this.setNextStatement(true, null);
     this.setColour(60);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-notify.html");
   }
 };
 
@@ -101,7 +101,7 @@ Blockly.Blocks['linenotify_sendimg'] = {
     this.setNextStatement(true, null);
     this.setColour(60);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-notify.html");
   }
 };
 // ---------------------------
@@ -123,7 +123,7 @@ Blockly.Blocks['linebot_set'] = {
     this.setNextStatement(true, null);
     this.setColour(195);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-bot.html");
   }
 };
 
@@ -139,7 +139,7 @@ Blockly.Blocks['linebot_on'] = {
     this.setNextStatement(true, null);
     this.setColour(60);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-bot.html");
   }
 };
 
@@ -151,7 +151,7 @@ Blockly.Blocks['linebot_message'] = {
     this.setOutput(true, null);
     this.setColour(30);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-bot.html");
   }
 };
 
@@ -166,7 +166,7 @@ Blockly.Blocks['linebot_sendmsg'] = {
     this.setNextStatement(true, null);
     this.setColour(60);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-bot.html");
   }
 };
 
@@ -187,7 +187,7 @@ Blockly.Blocks['linebot_sendstk'] = {
     this.setNextStatement(true, null);
     this.setColour(60);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-bot.html");
   }
 };
 
@@ -209,7 +209,7 @@ Blockly.Blocks['linebot_sendimg'] = {
     this.setNextStatement(true, null);
     this.setColour(60);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-bot.html");
   }
 };
 
@@ -231,7 +231,7 @@ Blockly.Blocks['linebot_sendvideo'] = {
     this.setNextStatement(true, null);
     this.setColour(60);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-bot.html");
   }
 };
 
@@ -253,7 +253,7 @@ Blockly.Blocks['linebot_sendaudio'] = {
     this.setNextStatement(true, null);
     this.setColour(60);
  this.setTooltip("");
- this.setHelpUrl("");
+ this.setHelpUrl("https://buberhu.blogspot.com/2018/10/webduinolineline-bot.html");
   }
 };
 
